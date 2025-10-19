@@ -4,6 +4,8 @@ import json
 import asyncio
 import os
 import datetime
+from dotenv import load_dotenv
+load_dotenv() # Wczytuje zmienne z pliku .env
 
 # --- Konfiguracja ---
 TOKEN = os.environ.get('TOKEN')
