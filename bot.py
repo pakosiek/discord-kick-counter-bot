@@ -189,7 +189,7 @@ async def on_voice_state_update(member: discord.Member, before: discord.VoiceSta
                 target_channel_id = entry.target.id 
                 print(f"  [DEBUG Nuke Check] Znalazłem log usunięcia kanału. ID celu: {target_channel_id}, Wiek: {time_difference:.1f}s")
 
-                if target_channel_id == before.channel.id and time_difference < 30.0:
+                if target_channel_id == before.channel.id and time_difference < 600.0:
                     nuker = entry.user
                     
                     # --- POPRAWKA: Sprawdzenie samobójczego "Nuke'a" ---
@@ -242,7 +242,7 @@ async def on_voice_state_update(member: discord.Member, before: discord.VoiceSta
                     await zarejestruj_wyrzucenie(kicker, member, before.channel, is_nuke=False, is_first_nuke_victim=False)
                     return
 
-                if target is None and time_difference < 45.0:
+                if target is None and time_difference < 600.0:
                     total_kicks_in_log = getattr(entry.extra, 'count', 1)
                     current_uses = PROCESSED_LOG_COUNTS.get(entry.id, 0)
                     
@@ -463,4 +463,5 @@ if __name__ == "__main__":
             print("BŁĄD KRYTYCZNY: Nieprawidłowy Token.")
             print("Bot nie mógł się zalogować. Sprawdź, czy")
             print("poprawnie wkleiłeś swój NOWY token.")
+
             print("="*50)
