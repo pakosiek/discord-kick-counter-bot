@@ -9,7 +9,7 @@ load_dotenv() # Wczytuje zmienne z pliku .env
 
 # --- Konfiguracja ---
 TOKEN = os.environ.get('TOKEN')
-LOG_CHANNEL_ID = 1429220965690114189  # Pana ID kanału
+LOG_CHANNEL_ID = 1429761286761091142  # Pana ID kanału
 NAZWA_PLIKU_STATYSTYK = "kick_stats.json"
 
 # --- Konfiguracja Intencji (Intents) ---
@@ -465,3 +465,4 @@ if __name__ == "__main__":
             print("poprawnie wkleiłeś swój NOWY token.")
 
             print("="*50)
+
